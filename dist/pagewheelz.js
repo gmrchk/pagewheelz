@@ -314,7 +314,6 @@ var Wheelz = function () {
         var defaults = {
             containerPadding: 0,
             draggable: false,
-
             friction: 0.3,
             acceleration: 0.04,
             preset: null
@@ -632,7 +631,6 @@ function mouseUp(event) {
 
     this.element.style.cursor = "";
     document.documentElement.style.cursor = "";
-    this.press.pressed = false;
 
     var ev = void 0;
     if (event.type == "touchstart") {
@@ -645,8 +643,12 @@ function mouseUp(event) {
         _this.press.moved = false;
     }, 10);
 
-    this.executeHandlers("dragEnd", ev);
-    this.executeHandlers("pointerUp", ev);
+    if (this.press.pressed) {
+        this.executeHandlers("dragEnd", ev);
+        this.executeHandlers("pointerUp", ev);
+    }
+
+    this.press.pressed = false;
 }
 
 /***/ }),
@@ -918,6 +920,8 @@ var Kinet = function () {
     }, {
         key: 'off',
         value: function off(event, handler) {
+            var _this5 = this;
+
             if (event != null) {
                 if (handler != null) {
                     if (this._handlers[event] && this._handlers[event].filter(function (savedHandler) {
@@ -937,7 +941,9 @@ var Kinet = function () {
                     this._handlers[event] = [];
                 }
             } else {
-                this._handlers = {};
+                Object.keys(this._handlers).forEach(function (keys) {
+                    _this5._handlers[keys] = [];
+                });
             }
         }
     }]);
