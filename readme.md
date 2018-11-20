@@ -23,4 +23,4 @@ Wheelz accepts several options defined as follows.
 var wheelz = new PageWheelz();
 ```
 
-For the purpose of keeping the native window scrollbar, PageWheelz requires a wrapper over a content with attribute `data-wheelz`.``
+For the purpose of keeping the native window scrollbar, PageWheelz requires a wrapper over a content with attribute `data-wheelz`.
