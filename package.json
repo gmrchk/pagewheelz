@@ -1,6 +1,6 @@
 {
   "name": "pagewheelz",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Fun, acceleration based scroller for browser window.",
   "main": "lib/index.js",
   "scripts": {

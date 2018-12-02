@@ -158,7 +158,7 @@ var PageWheelz = function (_Wheelz) {
         // disable original listeners
         var _this = _possibleConstructorReturn(this, (PageWheelz.__proto__ || Object.getPrototypeOf(PageWheelz)).call(this, $container, options));
 
-        _this.element.removeEventListener('mousewheel', _this._wheelHandler);
+        _this.element.removeEventListener('wheel', _this._wheelHandler);
         _this.element.removeEventListener('mousemove', _this._wheelHandler);
         _this.element.removeEventListener('touchmove', _this._wheelHandler);
 
