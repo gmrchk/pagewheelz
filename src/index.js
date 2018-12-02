@@ -37,7 +37,7 @@ class PageWheelz extends Wheelz {
         super($container, options);
 
         // disable original listeners
-        this.element.removeEventListener('mousewheel', this._wheelHandler);
+        this.element.removeEventListener('wheel', this._wheelHandler);
         this.element.removeEventListener('mousemove', this._wheelHandler);
         this.element.removeEventListener('touchmove', this._wheelHandler);
 
